@@ -1,5 +1,5 @@
 
-# TC1030 Proyecto Ahorcado
+# Proyecto Ahorcado
 
 Este proyecto está hecho como referencia para el curso de TC1030. Se trata de un juego clásico del **Ahorcado**, implementado con programación orientada a objetos en C++.  
 El proyecto incluye una estructura de clases que permite modelar a los jugadores (humanos o computadora), la palabra secreta, y la lógica del juego como tal.  
