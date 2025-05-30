@@ -1,23 +1,13 @@
-#include <iostream>
+#include "ahorcado.h"
+#include "jugadorComputadora.h" 
 #include "jugadorHumano.h"
-#include "jugadorComputadora.h"
-
-using namespace std;
 
 int main() {
-    // Crear un jugador humano
-    Jugador* j1 = new JugadorHumano("Alejandro");
-    cout << j1->mostrarJugador() << endl;
-    char letra1 = j1->realizarIntento();
-    cout << "Letra ingresada: " << letra1 << endl;
+    // Prueba temporal de juego con jugador computadora
+    Jugador* j = new JugadorComputadora(); 
+    Ahorcado juego(j, "computadora");
+    juego.jugar();
 
-    cout << "---------------------------------------" << endl;
-
-    // Crear un jugador computadora
-    Jugador* j2 = new JugadorComputadora();
-    cout << j2->mostrarJugador() << endl;
-    char letra2 = j2->realizarIntento();
-    cout << "Letra generada: " << letra2 << endl;
-
+    delete j;
     return 0;
 }
