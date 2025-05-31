@@ -1,21 +1,42 @@
+# Juego del Ahorcado - TC1030
 
-# Proyecto Ahorcado
+Este proyecto implementa el clásico **juego del Ahorcado** en C++ utilizando los principios de **Programación Orientada a Objetos (POO)**.
 
-Este proyecto está hecho como para el curso de TC1030. Se trata de un juego del **Ahorcado**, implementado con programación orientada a objetos en C++.  
-El proyecto incluye una estructura de clases que permite modelar a los jugadores (humanos o computadora), la palabra secreta, y la lógica del juego.  
+---
 
-## Funcionalidad
+### Clases principales:
 
-El programa permite:
+- **`Jugador`** *(abstracta)*: Define la interfaz para los tipos de jugadores. Contiene métodos virtuales puros.
+- **`JugadorHumano`**: Permite ingresar letras desde teclado.
+- **`JugadorComputadora`**: Genera letras automáticamente.
+- **`Palabra`**: Se encarga de manejar la palabra secreta y el progreso del jugador.
+- **`Ahorcado`**: Controla el flujo del juego, los intentos, las letras usadas y la lógica del juego.
 
-- Adivinar una palabra secreta letra por letra.
-- Visualizar el progreso actual de la palabra y las letras usadas.
-- Jugar como humano o jugador automático.
-- Detectar errores y validar letras.
-- Correr en la consola del sistema.
+---
 
-##  Consideraciones
+##  Características
 
-- El programa corre solo en consola y está hecho con C++ estándar.
-- Compatible con Windows, Linux y macOS.
-- Compilar con: (POR DEFINIR)
+- Uso de **clase abstracta** y **herencia** (`Jugador`).
+-  Aplicación de **modificadores de acceso** (`private`, `protected`, `public`).
+-  Implementación de **polimorfismo** dinámico.
+-  Uso de archivo `.txt`  para cargar palabras aleatorias.
+-  Visualización del muñeco del ahorcado en consola.
+-  Manejo de intentos y letras usadas.
+
+---
+
+##  Compilación y ejecución
+
+###  Compilación y ejecución:
+
+```bash
+g++ main.cpp ahorcado.cpp palabra.cpp jugador.cpp jugadorHumano.cpp jugadorComputadora.cpp -o ahorcado
+./ahorcado
+```
+###  Casos que harían que el proyecto deje de funcionar:
+- Archivo palabras.txt inexistente o vacío: si no se encuentra el archivo o no contiene palabras, el juego usará la palabra "ahorcado" por defecto.
+
+- Entrada inválida del jugador: Si el usuario escribe más de una letra, se toma solo la primera, pero no se muestra un mensaje de advertencia.
+
+- Caracteres especiales o acentos: El programa no reconoce correctamente letras acentuadas (á, é, í, etc.) ni la letra ñ, si hay acentos en el archivo .txt, pueden aparecer errores o comparaciones fallidas.
+
