@@ -24,3 +24,7 @@ bool Palabra::completa() const {
 string Palabra::getProgreso() const {
     return progreso;
 }
+
+string Palabra::getPalabraReal() const {
+    return palabra;
+}

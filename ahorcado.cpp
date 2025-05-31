@@ -3,6 +3,72 @@
 #include <algorithm>
 using namespace std;
 
+void mostrarAhorcado(int misses) {
+  if(misses==0) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==1) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==2) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<"  |   | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==3) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<" /|   | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==4) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<" /|\\  | \n";
+    cout<<"      | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==5) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<" /|\\  | \n";
+    cout<<" /    | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+  else if(misses==6) {
+    cout<<"  +---+ \n";
+    cout<<"  |   | \n";
+    cout<<"  O   | \n";
+    cout<<" /|\\  | \n";
+    cout<<" / \\  | \n";
+    cout<<"      | \n";
+    cout<<" ========= \n";
+  }
+}
+
 Ahorcado::Ahorcado(Jugador* jugador, string palabra)
     : jugador(jugador), palabraSecreta(palabra) {
     intentosMaximos = 6;
@@ -38,11 +104,14 @@ void Ahorcado::jugar() {
     if (palabraSecreta.completa()) {
         cout << "¡Ganaste! Adivinaste la palabra: " << palabraSecreta.getProgreso() << endl;
     } else {
-        cout << "Perdiste. La palabra era: " << palabraSecreta.getProgreso() << endl;
+        cout << "Perdiste. La palabra era: " << palabraSecreta.getPalabraReal() << endl;
     }
 }
 
+
 void Ahorcado::mostrarEstado() const {
+    mostrarAhorcado(intentosActuales);
+
     cout << "\n" << jugador->mostrarJugador() << endl;
     cout << "Palabra: " << palabraSecreta.getProgreso() << endl;
     cout << "Letras usadas: ";

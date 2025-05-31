@@ -17,6 +17,8 @@ class Palabra {
         bool revelarLetra(char letra);
         bool completa() const;
         string getProgreso() const;
+        string getPalabraReal() const;
+
 };
 
 #endif
