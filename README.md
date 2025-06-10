@@ -30,7 +30,7 @@ Este proyecto implementa el clásico **juego del Ahorcado** en C++ utilizando lo
 ###  Compilación y ejecución:
 
 ```bash
-g++ main.cpp ahorcado.cpp palabra.cpp jugador.cpp jugadorHumano.cpp jugadorComputadora.cpp -o ahorcado
+g++ ahorcado.cpp palabra.cpp jugador.cpp jugadorHumano.cpp jugadorComputadora.cpp main.cpp -o ahorcado
 ./ahorcado
 ```
 ###  Casos que harían que el proyecto deje de funcionar:
