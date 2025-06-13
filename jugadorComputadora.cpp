@@ -3,24 +3,40 @@
 #include <iostream>
 using namespace std;
 
-JugadorComputadora :: JugadorComputadora() : Jugador("Bot"){
+//Declaro objeto JugadorComputadora que hereda de Jugador
+JugadorComputadora::JugadorComputadora() : Jugador("Bot") {
     srand(time(0));
 }
 
-char JugadorComputadora::realizarIntento(){
+/**
+ * realizarIntento genera una letra aleatoria y la muestra en pantalla.
+ * Este método es llamado por el juego cuando es turno de la computadora.
+ */
+char JugadorComputadora::realizarIntento() {
     char letra = generarLetra();
     cout << "La computadora elige la letra: " << letra << endl;
     return letra;
 }
 
-string JugadorComputadora::mostrarJugador(){
+/**
+ * mostrarJugador regresa una cadena con el tipo y nombre del jugador.
+ * En este caso devuelve "Computadora Bot".
+ */
+string JugadorComputadora::mostrarJugador() {
     return "Computadora " + nombre;
 }
 
-char JugadorComputadora::generarLetra(){
+/**
+ * generarLetra elige una letra aleatoria.
+ * Se usa como intento automático de la computadora.
+ */
+char JugadorComputadora::generarLetra() {
     return 'a' + rand() % 26;
 }
 
-void JugadorComputadora::resetearScore(){
+/**
+ * resetearScore reinicia el puntaje de la computadora a cero.
+ */
+void JugadorComputadora::resetearScore() {
     score = 0;
 }

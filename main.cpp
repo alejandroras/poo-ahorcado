@@ -5,30 +5,39 @@
 #include <iostream>
 #include "ahorcado.h"
 #include "jugadorHumano.h"
-//#include "jugadorComputadora.h" si se quiere simular cómo funciona un juego con la computadora
 
 using namespace std;
 
+//Declaro función que lee una palabra aleatoria desde un archivo
 string obtenerPalabraAleatoria(const string& nombreArchivo);
 
 int main() {
+    //Declaro variable para el nombre del jugador
     string nombreJugador;
     cout << "Bienvenido al juego del Ahorcado.\nIntroduce tu nombre: ";
     cin >> nombreJugador;
 
+    //Creo el jugador humano
     Jugador* jugador = new JugadorHumano(nombreJugador);
 
+    //Obtengo una palabra secreta desde un archivo
     string palabraSecreta = obtenerPalabraAleatoria("palabras.txt");
 
+    //Creo el objeto del juego y lo inicio
     Ahorcado juego(jugador, palabraSecreta);
-
     juego.jugar();
 
+    //Libero memoria asignada al jugador
     delete jugador;
 
     return 0;
 }
 
+/**
+ * obtenerPalabraAleatoria lee un archivo de texto con palabras,
+ * guarda todas las líneas en un vector y selecciona una palabra al azar.
+ * Si el archivo está vacío, regresa una palabra por defecto.
+ */
 string obtenerPalabraAleatoria(const string& nombreArchivo) {
     vector<string> palabras;
     ifstream archivo(nombreArchivo);

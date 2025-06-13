@@ -1,18 +1,31 @@
 #include "jugador.h"
 
-Jugador::Jugador(string nombre){
-    this -> nombre = nombre;
+/**
+ * Constructor de Jugador
+ * Inicializa el nombre con el string recibido y establece el puntaje en cero.
+ */
+Jugador::Jugador(string nombre) {
+    this->nombre = nombre;
     score = 0;
 }
 
-string Jugador::getNombre() const{
+/**
+ * Devuelve el nombre actual del jugador.
+ */
+string Jugador::getNombre() const {
     return nombre;
 }
 
-void Jugador::setNombre(const string& nuevoNombre){
-    this -> nombre = nuevoNombre;
+/**
+ * Cambia el nombre del jugador al valor recibido.
+ */
+void Jugador::setNombre(const string& nuevoNombre) {
+    this->nombre = nuevoNombre;
 }
 
-void Jugador::resetearScore(){
+/**
+ * Reinicia el puntaje del jugador a cero.
+ */
+void Jugador::resetearScore() {
     score = 0;
 }
