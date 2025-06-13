@@ -1,3 +1,10 @@
+/*
+ * Proyecto Ahorcado
+ * Alejandro Rasgado Raymundo
+ * A01713901
+ * 12/06/2025
+ */
+
 #ifndef AHORCADO_H
 #define AHORCADO_H
 
